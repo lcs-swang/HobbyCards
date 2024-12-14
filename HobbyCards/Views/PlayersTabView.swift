@@ -6,20 +6,50 @@
 //
 import SwiftUI
 
-struct PlayersTabView: View{
+struct HockeyCardView: View {
+    let player: HockeyPlayer
     
-    var body: some View{
-        TabView{
-            ForEach(players){currentPlayer in
-                HockeyPlayer(player: currentPlayer,}
+    var body: some View {
+        VStack {
+            Text(player.name)
+                .font(.title)
+                .fontWeight(.bold)
+            Spacer()
+            Text(player.position)
+                .font(.subheadline)
+                .foregroundColor(.gray)
+            Spacer()
+            Text(player.team)
+                .font(.subheadline)
+                .foregroundColor(.blue)
         }
+        .padding()
+        .frame(width: 250, height: 300)
+        .background(Color.white)
+        .cornerRadius(10)
+
     }
-    .ignoresSafeArea()
-    .tabViewStyle(.page(indexDisplayMode: .never)
-    . persistentSystemOverlays(.hidden)
+}
+
+// Main view with TabView to show all the players in individual tabs
+struct ContentView: View {
+    var body: some View {
+        TabView {
+            ForEach(players) { player in
+                HockeyCardView(player: player)
+                    .tabItem {
+                        Text(player.name)
+                        Image(systemName: "person.fill")
+                    }
+            }
+        }
+        .tabViewStyle(PageTabViewStyle())
     }
+}
 
 
-#Preview{
-   PlayersTabView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
