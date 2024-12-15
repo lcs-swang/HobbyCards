@@ -6,6 +6,7 @@
 //
 import SwiftUI
 
+
 struct HockeyCardView: View {
     let player: HockeyPlayer
     
@@ -14,7 +15,12 @@ struct HockeyCardView: View {
             Text(player.name)
                 .font(.title)
                 .fontWeight(.bold)
-            Spacer()
+            ZStack {
+                HockeyStick()
+                    .size(width: 60,height: 60)
+                HockeyStick()
+                    .size(width: 60,height: 60)
+            }
             Text(player.position)
                 .font(.subheadline)
                 .foregroundColor(.gray)
