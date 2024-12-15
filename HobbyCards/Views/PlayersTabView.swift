@@ -8,51 +8,56 @@ struct HockeyCardView: View {
             // Color blocks: Three equally spaced color sections
             VStack(spacing: 0) {
                 Rectangle()
-                    .fill(Color.gray) // First color block
+                    .fill(Color.green) // First color block
                 
                 Rectangle()
                     .fill(Color.blue) // Second color block
                 
                 Rectangle()
-                    .fill(Color.purple) // Third color block
+                    .fill(Color.red) // Third color block
             }
             .ignoresSafeArea()
 
             VStack {
-                Spacer()
-                
-                // Name at the top
                 Text(player.name)
                     .font(.title)
                     .fontWeight(.bold)
+                    .padding(.top, 80) // Adjust this padding to move it closer to the top
                 Spacer()
                 
                 // Position is pushed to the second row (between hockey stick and name)
                 Text(player.position)
                     .font(.title)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
 
-                // Hockey stick in the second block (blue color block)
+                // Hockey sticks in the second block (blue color block)
                 ZStack {
+                    // First hockey stick, yellow color
                     HockeyStick()
-                        .frame(width: 100, height: 150)
+                        .frame(width: 100, height: 155)
+                        .scaleEffect(x: 1, y: -1)
+                        .rotationEffect(Angle(degrees: 210))
+                        .foregroundColor(.yellow) // Set color to yellow
                     
+                    // Second hockey stick, yellow color
                     HockeyStick()
-                        .frame(width: 100, height: 150)
-                        .rotationEffect(.degrees(180))
+                        .frame(width: 100, height: 155)
+                        .scaleEffect(x: -1, y: -1)
+                        .rotationEffect(Angle(degrees: -210))
+                        .offset(x: 30)
+                        .foregroundColor(.yellow) // Set color to yellow
                 }
-                .padding(.top, 10)
-                
                 Spacer()
 
                 // Team at the bottom
                 Text(player.team)
                     .font(.title)
-                    .foregroundColor(.black)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
                 
                 Spacer()
             }
-            .padding()
+            .padding(.bottom,-40)
         }
     }
 }
@@ -78,3 +83,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
