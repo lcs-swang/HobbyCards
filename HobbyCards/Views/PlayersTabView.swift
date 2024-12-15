@@ -20,14 +20,14 @@ struct HockeyCardView: View {
 
             VStack {
                 Text(player.name)
-                    .font(.title)
+                    .font(.custom("Times New Roman", size: 30)) // Changed to Times New Roman
                     .fontWeight(.bold)
                     .padding(.top, 80) // Adjust this padding to move it closer to the top
                 Spacer()
                 
                 // Position is pushed to the second row (between hockey stick and name)
                 Text(player.position)
-                    .font(.title)
+                    .font(.custom("Times New Roman", size: 27)) // Changed to Times New Roman
                     .foregroundColor(.white)
 
                 // Hockey sticks in the second block (blue color block)
@@ -51,7 +51,7 @@ struct HockeyCardView: View {
 
                 // Team at the bottom
                 Text(player.team)
-                    .font(.title)
+                    .font(.custom("Times New Roman", size: 27)) // Changed to Times New Roman
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                 
