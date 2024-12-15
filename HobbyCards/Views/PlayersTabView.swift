@@ -4,54 +4,58 @@ struct HockeyCardView: View {
     let player: HockeyPlayer
     
     var body: some View {
-        HStack {
+        ZStack {
             // Color blocks: Three equally spaced color sections
-            
-                VStack(spacing:0) {
-                    Rectangle()
-                        .fill(Color.gray) // First color block
-                    
-                    Rectangle()
-                        .fill(Color.blue) // Second color block
-                    
-                    Rectangle()
-                        .fill(Color.purple) // Third color block
-                }
+            VStack(spacing: 0) {
+                Rectangle()
+                    .fill(Color.gray) // First color block
+                
+                Rectangle()
+                    .fill(Color.blue) // Second color block
+                
+                Rectangle()
+                    .fill(Color.purple) // Third color block
             }
-            .frame(height: 1000) // Height for the color blocks section
-            
+            .ignoresSafeArea()
+
             VStack {
+                Spacer()
+                
+                // Name at the top
                 Text(player.name)
                     .font(.title)
                     .fontWeight(.bold)
                 Spacer()
-                Spacer()
-                VStack {
+                
+                // Position is pushed to the second row (between hockey stick and name)
+                Text(player.position)
+                    .font(.title)
+                    .foregroundColor(.black)
+
+                // Hockey stick in the second block (blue color block)
+                ZStack {
                     HockeyStick()
-                        .size(width: 100, height: 150)
-                        .rotationEffect(.degrees(0))
+                        .frame(width: 100, height: 150)
+                    
                     HockeyStick()
-                        .size(width: 100, height: 150)
+                        .frame(width: 100, height: 150)
                         .rotationEffect(.degrees(180))
                 }
+                .padding(.top, 10)
                 
-                Text(player.position)
-                    .font(.headline)
+                Spacer()
+
+                // Team at the bottom
+                Text(player.team)
+                    .font(.title)
                     .foregroundColor(.black)
                 
                 Spacer()
-                Spacer()
-                Text(player.team)
-                    .font(.headline)
-                    .foregroundColor(.blue)
             }
             .padding()
-            .frame(width: 250, height: 300)
-            .background(Color.white)
-            .cornerRadius(10)
         }
     }
-
+}
 
 // Main view with TabView to show all the players in individual tabs
 struct ContentView: View {
