@@ -68,6 +68,7 @@
 		DE6E0D302D0E18C80092975B /* HobbyCards */ = {
 			isa = PBXGroup;
 			children = (
+				DE6E0D2E2D0E18C80092975B /* Assets.xcassets */,
 				DEA62BCF2D0E312300462019 /* Preview Content */,
 				DE6E0D2D2D0E18C80092975B /* Shape */,
 				DE6E0D4F2D0E1A750092975B /* Model */,
@@ -98,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				DEA62BD02D0E316300462019 /* ContentView.swift */,
-				DE6E0D2E2D0E18C80092975B /* Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";

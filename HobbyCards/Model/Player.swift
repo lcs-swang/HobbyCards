@@ -16,10 +16,10 @@ struct HockeyPlayer: Identifiable {
 }
 
 // Define the players
-let WG = HockeyPlayer(name: "Name: Wayne Gretzky", position: "Position: Center", team: "Team: Edmonton Oilers", image: "image")
-let SC = HockeyPlayer(name: "Name: Sidney Crosby", position: "Position: Center", team: "Team: Pittsburgh Penguins",image:"image 1")
-let CM = HockeyPlayer(name: "Name: Connor McDavid", position: "Position: Center", team: "Team: Edmonton Oilers",image: "image 2")
-let PR = HockeyPlayer(name: "Name: Patrick Roy", position: "Position: Goalie", team: "Team: Montreal Canadiens",image: "image 3")
+let WG = HockeyPlayer(name: "Name: Wayne Gretzky", position: "Position: Center", team: "Team: Edmonton Oilers", image: "Image 1")
+let SC = HockeyPlayer(name: "Name: Sidney Crosby", position: "Position: Center", team: "Team: Pittsburgh Penguins",image:"Image")
+let CM = HockeyPlayer(name: "Name: Connor McDavid", position: "Position: Center", team: "Team: Edmonton Oilers",image: "Image 2")
+let PR = HockeyPlayer(name: "Name: Patrick Roy", position: "Position: Goalie", team: "Team: Montreal Canadiens",image: "Image 3")
 
 // Create the Players array
 let players = [WG, SC, CM, PR]

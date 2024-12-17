@@ -30,6 +30,8 @@ struct HockeyCardView: View {
                     .foregroundColor(.white)
                     .padding(.top, 10)
                 // Hockey sticks in the second block (blue color block)
+                Image(player.image)
+                    .resizable()
                 ZStack {
                     // First hockey stick, yellow color
                     HockeyStick()
@@ -75,9 +77,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }
-
